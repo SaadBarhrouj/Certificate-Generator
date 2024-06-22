@@ -1,0 +1,29 @@
+div{
+    background-color: #fff;
+    width: 400px;
+    height: 500px;
+    margin: 70px auto;
+    border-style: none double double double;
+    border-color: #fff gray gray gray ;
+    border-right-width: 0 1px 1px 1px;
+    box-shadow: 1px 1px 10px silver ;
+
+}
+div input{
+    display: block;
+    width: 240px;
+    margin: 15px 0 15px 0;
+    padding: 10px;
+}
+div img{
+    margin-top: 25px;
+
+}
+div input[type="submit"]{
+    width: 265px;
+    background-color: royalblue;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}

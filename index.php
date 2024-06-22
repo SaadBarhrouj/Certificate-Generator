@@ -23,7 +23,7 @@ imagettftext($image, 20, 0, 255, 1190, $color, $font, $numcert);
 
 // Envoi de l'image au navigateur en tant que JPEG
 imagejpeg($image);
-imagejpeg($image,"student/".$student."jpg");
+imagejpeg($image,"student/".$student.".jpg");
 
 // Libération de la mémoire
 imagedestroy($image);
