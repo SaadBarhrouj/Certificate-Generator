@@ -30,6 +30,7 @@ imagejpeg($image,"student/".$student.".jpg");
 imagedestroy($image);
 */
 
+
 if (isset($_POST['add'])) {
     // Chemin vers la police de caractères
     $font = 'arial.ttf';
@@ -46,12 +47,18 @@ if (isset($_POST['add'])) {
     imagettftext($image, 20, 0, 255, 1190, $color, $font, $_POST['numb']);
 
     // Envoi de l'image au navigateur en tant que JPEG
-    $filename = 'student/' . $_POST['student'] . '.jpg';
+    $filename = 'student/'. $_POST['student']. '.jpg';
     imagejpeg($image, $filename);
 
     // Libération de la mémoire
     imagedestroy($image);
 
+    // Génération du lien de téléchargement
+    $download_link = '<a href="'. $filename. '" download="'. $_POST['student']. '.jpg">Télécharger votre certificat</a>';
+
     echo "<center><h1>successfully add certificate</h1></center>";
+    echo $download_link;
+
+    
 }
 ?>
