@@ -29,31 +29,29 @@ imagejpeg($image,"student/".$student.".jpg");
 // Libération de la mémoire
 imagedestroy($image);
 */
-if(isset($_POST['add'])){
 
+if (isset($_POST['add'])) {
+    // Chemin vers la police de caractères
+    $font = 'arial.ttf';
 
-// Chemin vers la police de caractères
-    $font = realpath('arial.ttf');
-
-// Création d'une image à partir d'un fichier JPEG
+    // Création d'une image à partir d'un fichier JPEG
     $image = imagecreatefromjpeg('cer.jpg');
 
-// Définition de la couleur du texte (RVB: 51, 51, 102)
+    // Définition de la couleur du texte (RVB: 51, 51, 102)
     $color = imagecolorallocate($image, 51, 51, 102);
 
-// Ajout du texte sur l'image
+    // Ajout du texte sur l'image
     imagettftext($image, 45, 0, 120, 530, $color, $font, $_POST['student']);
-    imagettftext($image, 20, 0, 255, 1130, $color, $font,$_POST['teacher']);
+    imagettftext($image, 20, 0, 255, 1130, $color, $font, $_POST['teacher']);
     imagettftext($image, 20, 0, 255, 1190, $color, $font, $_POST['numb']);
 
-// Envoi de l'image au navigateur en tant que JPEG
+    // Envoi de l'image au navigateur en tant que JPEG
+    $filename = 'student/' . $_POST['student'] . '.jpg';
+    imagejpeg($image, $filename);
 
-    imagejpeg($image,"student/".$student.".jpg");
-
-// Libération de la mémoire
+    // Libération de la mémoire
     imagedestroy($image);
+
+    echo "<center><h1>successfully add certificate</h1></center>";
 }
-
 ?>
-
-
